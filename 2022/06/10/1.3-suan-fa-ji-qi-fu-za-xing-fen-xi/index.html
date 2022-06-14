@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, delta的博客">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="抽象数据类型, delta的博客">
+    <meta name="description" content="算法及其复杂性分析算法设计要求（1） 高效率：效率指的是算法执行的时间（时间复杂性）；
+​	高效性则要求算法的执行时间尽可能的短，其执行时间越短，算法的效率就越高
+（2）低存储量需求：存储量需求指算法执行过程中所需要的最大存储空间（空间复杂">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
 
     
 
-    <title>Hello World | delta的博客</title>
+    <title>抽象数据类型 | delta的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">抽象数据类型</h1>
                 </div>
             </div>
         </div>
@@ -428,9 +430,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">数据结构及算法</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -463,19 +469,48 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h1 id="算法及其复杂性分析"><a href="#算法及其复杂性分析" class="headerlink" title="算法及其复杂性分析"></a>算法及其复杂性分析</h1><h2 id="算法设计要求"><a href="#算法设计要求" class="headerlink" title="算法设计要求"></a>算法设计要求</h2><p>（1） <strong>高效率</strong>：效率指的是算法执行的时间（时间复杂性）；</p>
+<p>​	高效性则要求算法的执行时间尽可能的短，其执行时间越短，算法的效率就越高</p>
+<p>（2）<strong>低存储量需求</strong>：存储量需求指算法执行过程中所需要的最大存储空间（空间复杂性）。一般这两者与问题的规模有关</p>
+<h2 id="算法效率的度量"><a href="#算法效率的度量" class="headerlink" title="算法效率的度量"></a>算法效率的度量</h2><h3 id="常数量O-1"><a href="#常数量O-1" class="headerlink" title="常数量O($1$)"></a>常数量O($1$)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fun1</span><span class="params">(n <span class="type">int</span>)</span></span><span class="type">int</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> s <span class="type">int</span></span><br><span class="line">    s=(n*(n+<span class="number">1</span>))/<span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="线性阶O-n"><a href="#线性阶O-n" class="headerlink" title="线性阶O($n$)"></a>线性阶O($n$)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fun1</span><span class="params">(n <span class="type">int</span>)</span></span><span class="type">int</span>&#123;</span><br><span class="line">    s:=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">1</span>;i&lt;=n;i++;&#123;</span><br><span class="line">        s+=i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="平方阶O-n-2"><a href="#平方阶O-n-2" class="headerlink" title="平方阶O($n^2$)"></a>平方阶O($n^2$)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fun1</span><span class="params">(n <span class="type">int</span>)</span></span> <span class="type">int</span>&#123;</span><br><span class="line">    sum:=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;n;i++;&#123;</span><br><span class="line">        <span class="keyword">for</span> j:=<span class="number">0</span>;j&lt;n;j++&#123;</span><br><span class="line">            sum+=i*j</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="对数阶O-log-n"><a href="#对数阶O-log-n" class="headerlink" title="对数阶O($log(n)$)"></a>对数阶O($log(n)$)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fun1</span><span class="params">(n <span class="type">int</span>)</span></span><span class="type">int</span>&#123;</span><br><span class="line">	count:=<span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> count&lt;n&#123;</span><br><span class="line">		count=count*<span class="number">2</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<table>
+<thead>
+<tr>
+<th>常数阶</th>
+<th>对数阶</th>
+<th>线性阶</th>
+<th>线性对数阶</th>
+<th>平方阶</th>
+<th>立方阶</th>
+<th>…</th>
+<th>K次方阶</th>
+<th>指数阶</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$O(1)$</td>
+<td>$O(logn)$</td>
+<td>$O(n)$</td>
+<td>$O(nlogn)$</td>
+<td>$O(n^2)$</td>
+<td>$O(n^3)$</td>
+<td></td>
+<td>$O(n^k)$</td>
+<td>$O(2^n)$</td>
+</tr>
+</tbody></table>
+<h2 id="算法的存储需求"><a href="#算法的存储需求" class="headerlink" title="算法的存储需求"></a>算法的存储需求</h2><h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>记作 ：</p>
+<h5 id="S-n-x3D-O-f-n"><a href="#S-n-x3D-O-f-n" class="headerlink" title="$S(n)&#x3D;O(f(n))$"></a>$S(n)&#x3D;O(f(n))$</h5><p>其中n为问题的规模</p>
+<p><strong>一个算法所需的存储空间</strong><br>$$<br>\begin{cases}<br>    算法本身的存储空间\<br>    输入数据的存储空间\<br>    算法在运行过程中临时占用的存储空间<br>\end{cases}<br>$$<br>若所需临时空间不随问题规模的大小改变，则此算法被称为</p>
+<p><strong>原地工作</strong></p>
+<p>若所需存储量依赖于特定的输入，则通常按最坏情况考虑</p>
 
                 
             </div>
@@ -502,7 +537,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/06/10/hello-world/">http://example.com/2022/06/10/hello-world/</a>
+                    <a href="http://example.com/2022/06/10/1.3-suan-fa-ji-qi-fu-za-xing-fen-xi/">http://example.com/2022/06/10/1.3-suan-fa-ji-qi-fu-za-xing-fen-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,7 +574,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">数据结构及算法</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -715,7 +754,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/10/1.3-suan-fa-ji-qi-fu-za-xing-fen-xi/">
+                <a href="/2022/06/10/chou-xiang-shu-ju-lei-xing/">
                     <div class="card-image">
                         
                         
@@ -757,7 +796,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2022/06/10/hello-world/">
@@ -787,7 +826,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
